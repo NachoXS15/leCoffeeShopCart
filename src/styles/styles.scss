@@ -2,7 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
+
+
 
 :root{
     --black: #000;
@@ -19,4 +22,8 @@ header{
     color: white;
 }
 
+#header-text{
+    text-align: center;
+    margin-top: 20px;
+}
 
