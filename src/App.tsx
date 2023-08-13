@@ -7,12 +7,12 @@ function App() {
   return (
     <>
     <Header />
-      <section>
+      <nav>
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/order' element={<Order />}/>
         </Routes>
-      </section>
+      </nav>
     </>
   )
 }

@@ -1,6 +1,6 @@
-export default interface Product{
+export default interface ProductProps{
     id?: number
     name: string,
     price: number,
-    amount: number,
+    imgUrl: string
 }

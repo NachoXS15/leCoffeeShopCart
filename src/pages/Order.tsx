@@ -1,17 +1,21 @@
 import React from 'react'
 import products from "../data/products.json"
-
+import Item from '../components/Item'
 export default function Order() {
   return (
     <>
-      <h2>Productos Disponibles</h2>
-      {
-        products.map(product => (
-          <div className='item-row'>
-            {JSON.stringify(product)}
-          </div>
-        ))
-      }
+      <section>
+        <h2>PRODUCTOS DISPONIBLES</h2>
+        <div className='item-row'>
+        {
+          products && products.map(product => {
+            return(
+              <Item {...product} key={product.id}/>
+            )
+          })
+        }
+        </div>
+      </section>
     </>
   )
 }

@@ -3,24 +3,6 @@
         "id": 1,
         "name": "TRIPLE CHEESE",
         "price": 2000,
-        "imgURL": "../assets/img/burger.png"
-    },
-    {
-        "id": 2,
-        "name": "DOBLE BACON",
-        "price": 2000,
-        "imgURL": "../assets/img/burger.png"
-    },
-    {
-        "id": 3,
-        "name": "CHERNOBYL",
-        "price": 2000,
-        "imgURL": "../assets/img/burger.png"
-    },
-    {
-        "id": 4,
-        "name": "CHEESE SIMPLE",
-        "price": 2000,
-        "imgURL": "../assets/img/burger.png"
+        "imgUrl": "img/burger.png"
     }
 ]
