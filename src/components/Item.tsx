@@ -3,21 +3,34 @@ import ProductProps from "../interfaces/Product";
 import { Card } from "react-bootstrap";
 import { currencyFormat } from "../utilities/currencyFormat";
 
-export default function Item({id, name, price, imgUrl}: ProductProps) {
+export default function Item({ id, name, price, imgUrl }: ProductProps) {
+    const quantity = 0;
     return (
         <div className="item">
             <Card.Img variant="left" src={imgUrl}></Card.Img>
-            <div>
+            <div id="info">
                 <div>
                     <h4>{name}</h4>
                     <p>Carne x3, </p>
                 </div>
                 <div>
-                    <div style={{float: 'left', marginRight: '1em'}}>Cantidad: 1</div>
                     <span>{currencyFormat(price)}</span>
                 </div>
+                <div>
+                    {quantity === 0 ? (
+                        <button id="cart">Cart</button>
+                    ) : (
+                        <div className="buttons">
+                            <button>+</button>
+                            <div>
+                                <span>{quantity}</span>
+                            </div>
+                            <button>-</button>
+                            <button className="red-button">Remover</button>
+                        </div>
+                    )}
+                </div>
             </div>
-            <button>+</button>
         </div>
     );
 }
