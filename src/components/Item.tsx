@@ -1,6 +1,7 @@
 import React from "react";
 import ProductProps from "../interfaces/Product";
 import { Card } from "react-bootstrap";
+import { currencyFormat } from "../utilities/currencyFormat";
 
 export default function Item({id, name, price, imgUrl}: ProductProps) {
     return (
@@ -13,7 +14,7 @@ export default function Item({id, name, price, imgUrl}: ProductProps) {
                 </div>
                 <div>
                     <div style={{float: 'left', marginRight: '1em'}}>Cantidad: 1</div>
-                    <span>${price}</span>
+                    <span>{currencyFormat(price)}</span>
                 </div>
             </div>
             <button>+</button>

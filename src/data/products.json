@@ -4,5 +4,17 @@
         "name": "TRIPLE CHEESE",
         "price": 2000,
         "imgUrl": "img/burger.png"
+    },
+    {
+        "id": 2,
+        "name": "DOBLE BACON",
+        "price": 1500,
+        "imgUrl": "img/doble-bacon.png"
+    },
+    {
+        "id": 3,
+        "name": "LECO BURGER",
+        "price": 1500,
+        "imgUrl": "img/leco-burger.png"
     }
 ]
