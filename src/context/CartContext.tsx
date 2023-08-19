@@ -44,8 +44,33 @@ export function CartProvider({ children }: CartProviderProps) {
             }
         });
     };
+
+    const decreaseItems = (id: number) => {
+        setCartItems((currItems) => {
+            if (currItems.find((item) => item.id === id)?.quantity === 1) {
+                return currItems.filter((item) => item.id !== id);
+            } else {
+                return currItems.map((item) => {
+                    if (item.id === id) {
+                        return { ...item, quantity: item.quantity - 1 };
+                    } else {
+                        return item;
+                    }
+                });
+            }
+        });
+    };
+
+    const removeItems = (id: number, quantity: number) => {
+        setCartItems((currItem) => {
+            return currItem.filter((item) => item.id !== id);
+        });
+    };
+
     return (
-        <CartContext.Provider value={{ getItems }}>
+        <CartContext.Provider
+            value={{ getItems, increaseItems, decreaseItems, removeItems }}
+        >
             {children}
         </CartContext.Provider>
     );
