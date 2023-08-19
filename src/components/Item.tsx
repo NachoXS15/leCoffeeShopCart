@@ -8,7 +8,7 @@ export default function Item({ id, name, price, imgUrl }: ProductProps) {
     return (
         <div className="item">
             <Card.Img variant="left" src={imgUrl}></Card.Img>
-            <div id="info">
+            <div id="info"> 
                 <div>
                     <h4>{name}</h4>
                     <p>Carne x3, </p>
