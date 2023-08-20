@@ -3,7 +3,13 @@ import "../styles/styles.scss"
 import Logo from "../assets/img/logo.png"
 import { NavLink } from 'react-router-dom'
 import { Button, Nav } from 'react-bootstrap'
+import useCartContext from '../context/CartContext'
+import ProductProps from '../interfaces/Product'
 export default function Header() {
+
+  const {cartQuantity} = useCartContext();
+
+  const itemsCart = cartQuantity
   return (
     <header>
       <div>
@@ -19,7 +25,7 @@ export default function Header() {
         </Nav.Link>
         <Button style={{position: 'relative'}}>
           Cart
-          <div className='notify'>3</div>
+          {itemsCart === 0 ? null : <div className='notify'>{itemsCart}</div>}
         </Button>
       </nav>
     </header>

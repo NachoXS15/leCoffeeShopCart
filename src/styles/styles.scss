@@ -98,14 +98,10 @@ section{
             margin: 0;
         }
 
-        button{
-            border: none;
-            background: transparent;
-            font-size: 50px;
-
-        }
-
+       
+        
         #cart{
+            background: transparent;
             border: 1px solid red;
             font-size: 20px;
             margin-right: 1em;
@@ -119,7 +115,11 @@ section{
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-top: 10px;
 
+            .control-buttons{
+                padding: 0.02em 0.1em;
+            }
             .red-button{
                 font-size: 20px;
                 margin-left: 15px;
