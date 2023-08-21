@@ -1,11 +1,12 @@
+//fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&family=Roboto:ital,wght@1,100&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Poppins';
 }
-
-
 
 :root{
     --black: #000;
@@ -19,6 +20,7 @@ header{
     justify-content: space-around;
     align-items: center;
     color: white;
+    
     
     div{
         display: flex;
@@ -92,6 +94,7 @@ section{
 
         h4{
             margin: 0;
+            font-weight: 700;
         }
 
         p{
