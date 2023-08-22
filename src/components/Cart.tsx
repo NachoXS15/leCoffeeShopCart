@@ -10,22 +10,21 @@ export default function Cart({isOpen}: ShoppingCarProps) {
     const {cartItems, cartQuantity, cartOpen, cartClose} = useCartContext();
 
   return (
-
-    
-    
     <Offcanvas show={isOpen} onHide={cartClose} placement='end'>
         <Offcanvas.Header closeButton>
             <Offcanvas.Title>Carrito</Offcanvas.Title>
         </Offcanvas.Header>
-        {cartItems.map(item => {
-            return(
-                <div>
-                    <h2>asd</h2>
-                    <span>asd</span>
-                    <span>{cartQuantity}</span>
-                </div>
-            )
-        })}
+        {cartQuantity === 0 ? <h5 style={{textAlign: 'center'}}>No hay elementos agregados!</h5>: 
+          cartItems.map(item => {
+              return(
+                  <div>
+                      <h2>Triple Cheese</h2>
+                      <span>$1000</span>
+                      <span>{cartQuantity}</span>
+                  </div>
+              )
+          })
+        }
     </Offcanvas>
 
   )

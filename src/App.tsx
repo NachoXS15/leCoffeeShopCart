@@ -4,10 +4,16 @@ import Order from './pages/Order';
 import { Container } from '@mui/material';
 import Header from './components/Header';
 import { CartProvider } from './context/CartContext';
+import Cart from './components/Cart';
+import { useEffect, useState } from 'react';
 function App() {
+
+  const [bindCart, setBindCart] = useState(false);
+  
+
   return (
     <CartProvider>
-      <Header />
+      <Header/>
       <nav>
         <Routes>
             <Route path='/' element={<Home />} />

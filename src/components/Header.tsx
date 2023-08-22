@@ -4,6 +4,7 @@ import Logo from "../assets/img/logo.png";
 import { NavLink } from "react-router-dom";
 import { Button, Nav } from "react-bootstrap";
 import useCartContext from "../context/CartContext";
+
 export default function Header() {
     const { cartQuantity, cartClose, cartOpen } = useCartContext();
 

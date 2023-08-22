@@ -1,5 +1,5 @@
 import { type } from "os";
-import React, { useContext, createContext, ReactNode, useState } from "react";
+import React, { useContext, createContext, ReactNode, useState, useEffect } from "react";
 import Cart from "../components/Cart";
 
 const CartContext = createContext({} as CartContext);
@@ -35,7 +35,18 @@ export function CartProvider({ children }: CartProviderProps) {
     const cartOpen = () => setIsOpen(true)
     const cartClose = () => setIsOpen(false)
         
-
+    const openCart = (e: KeyboardEvent) => {
+        if (e.key == "e") {
+          setIsOpen(true)
+        }else{
+            setIsOpen(false)
+        }
+      }
+    
+      useEffect(() => {
+        document.addEventListener('keydown', openCart)
+      }, [])
+      
     const getItems = (id: number) => {
         return cartItems.find((item) => item.id === id)?.quantity || 0;
     };
