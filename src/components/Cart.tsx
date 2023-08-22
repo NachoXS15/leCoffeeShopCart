@@ -4,13 +4,15 @@ import ProductProps from '../interfaces/Product';
 import "../styles/styles.scss";
 import { Offcanvas } from 'react-bootstrap';
 import CartItem from './CartItem';
-
+import products from "../data/products.json"
+import { currencyFormat } from '../utilities/currencyFormat';
 type ShoppingCarProps= {
   isOpen: boolean
 }
 
 
-export default function Cart({isOpen}: ShoppingCarProps) {
+
+export default function Cart({isOpen}: ShoppingCarProps, {id}: ProductProps) {
     const {cartItems, cartQuantity, cartOpen, cartClose} = useCartContext();
 
   return (
@@ -26,6 +28,12 @@ export default function Cart({isOpen}: ShoppingCarProps) {
                 )
             })
           }
+          <h5>Total: {currencyFormat(
+            cartItems.reduce((total, cartItem) => {
+              const item = products.find((item) => item.id === cartItem.id)
+              return total + (item?.price || 0 ) * cartItem.quantity  
+            }, 0)
+          )}</h5>
         </Offcanvas.Body>
     </Offcanvas>
 
