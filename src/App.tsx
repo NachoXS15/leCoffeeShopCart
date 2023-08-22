@@ -14,12 +14,10 @@ function App() {
   return (
     <CartProvider>
       <Header/>
-      <nav>
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/order' element={<Order />}/>
         </Routes>
-      </nav>
     </CartProvider>
   )
 }

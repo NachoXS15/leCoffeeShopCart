@@ -41,11 +41,11 @@ export function CartProvider({ children }: CartProviderProps) {
         }else{
             setIsOpen(false)
         }
-      }
+    }
     
-      useEffect(() => {
-        document.addEventListener('keydown', openCart)
-      }, [])
+     useEffect(() => {
+       document.addEventListener('keydown', openCart)
+     }, [])
       
     const getItems = (id: number) => {
         return cartItems.find((item) => item.id === id)?.quantity || 0;
