@@ -1,4 +1,3 @@
-import { type } from "os";
 import React, { useContext, createContext, ReactNode, useState, useEffect } from "react";
 import Cart from "../components/Cart";
 
@@ -36,7 +35,7 @@ export function CartProvider({ children }: CartProviderProps) {
     const cartClose = () => setIsOpen(false)
         
     const openCart = (e: KeyboardEvent) => {
-        if (e.key == "e") {
+        if (e.key === "e") {
           setIsOpen(true)
         }else{
             setIsOpen(false)

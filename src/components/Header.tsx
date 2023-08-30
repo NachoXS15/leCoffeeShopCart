@@ -6,13 +6,13 @@ import { Button, Nav } from "react-bootstrap";
 import useCartContext from "../context/CartContext";
 
 export default function Header() {
-    const { cartQuantity, cartClose, cartOpen } = useCartContext();
+    const { cartQuantity, cartOpen } = useCartContext();
 
     const itemsCart = cartQuantity;
     return (
         <header>
             <div>
-                <a href="#">
+                <a href="/home">
                     <img src={Logo} alt="" width={90} />
                 </a>
                 <h4>CARGA Y GENERACION DE PEDIDOS</h4>
@@ -22,11 +22,14 @@ export default function Header() {
                     Home
                 </Nav.Link>
                 <Nav.Link to="/order" as={NavLink}>
-                    Order
+                    Productos
+                </Nav.Link>
+                <Nav.Link>
+                    Historial
                 </Nav.Link>
                 <Button onClick={cartOpen} style={{ position: "relative" }}>
                     Cart
-                    {itemsCart != 0 ? <div className="notify">{itemsCart}</div> : null}
+                    {itemsCart !== 0 ? <div className="notify">{itemsCart}</div> : null}
                 </Button>
             </nav>
         </header>

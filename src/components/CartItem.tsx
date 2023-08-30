@@ -2,7 +2,6 @@ import React from "react";
 import "../styles/styles.scss";
 import useCartContext from "../context/CartContext";
 import products from "../data/products.json"
-import { currencyFormat } from "../utilities/currencyFormat";
 type ShoppingCarProps = {
     id: number,
     quantity: number
@@ -10,7 +9,7 @@ type ShoppingCarProps = {
 
 export default function CartItem({id, quantity}: ShoppingCarProps) {
 
-    const {cartItems, cartQuantity, removeItems} = useCartContext();
+    const {removeItems} = useCartContext();
     const item = products.find(item => item.id === id)
 
     return (
