@@ -34,18 +34,17 @@ export function CartProvider({ children }: CartProviderProps) {
     const cartOpen = () => setIsOpen(true)
     const cartClose = () => setIsOpen(false)
         
-    const openCart = (e: KeyboardEvent) => {
-        if (e.key === "e") {
-          setIsOpen(true)
-        }else{
-            setIsOpen(false)
+    const bindCart = (e: KeyboardEvent) => {
+        if(e.key === "e"){
+            setIsOpen(!isOpen);
         }
     }
+
+    useEffect(() => {
+      document.addEventListener('keydown', bindCart);
+    }, [])
     
-     useEffect(() => {
-       document.addEventListener('keydown', openCart)
-     }, [])
-      
+    
     const getItems = (id: number) => {
         return cartItems.find((item) => item.id === id)?.quantity || 0;
     };

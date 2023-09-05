@@ -26,13 +26,13 @@
     {
         "id": 5,
         "name": "ANDES RUBIA 473ml",
-        "price": 1500,
-        "imgUrl": "img/doble-bacon.png"
+        "price": 600,
+        "imgUrl": "img/andes.png"
     },
     {
         "id": 6,
         "name": "AGUA NESTLE 500ML ",
-        "price": 1500,
-        "imgUrl": "img/leco-burger.png"
+        "price": 400,
+        "imgUrl": "img/agua.png"
     }
 ]

@@ -50,6 +50,7 @@ export default function Cart(
                             )}
                         </h5>
                     </Offcanvas.Body>
+                    
                 </Offcanvas>
             </Page>
         </Document>

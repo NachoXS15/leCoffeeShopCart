@@ -4,10 +4,11 @@ import Logo from "../assets/img/logo.png";
 import { NavLink } from "react-router-dom";
 import { Button, Nav } from "react-bootstrap";
 import useCartContext from "../context/CartContext";
+import useHistoryContext from "../context/HistoryContext";
 
 export default function Header() {
     const { cartQuantity, cartOpen } = useCartContext();
-
+    const {historyOpen} = useHistoryContext();
     const itemsCart = cartQuantity;
     return (
         <header>
@@ -24,7 +25,7 @@ export default function Header() {
                 <Nav.Link to="/order" as={NavLink}>
                     Productos
                 </Nav.Link>
-                <Nav.Link>
+                <Nav.Link onClick={historyOpen} >
                     Historial
                 </Nav.Link>
                 <Button onClick={cartOpen} style={{ position: "relative" }}>

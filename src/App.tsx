@@ -3,17 +3,19 @@ import Home from './pages/Home';
 import Order from './pages/Order';
 import Header from './components/Header';
 import { CartProvider } from './context/CartContext';
-
+import { HistoryProvider } from './context/HistoryContext';
 function App() {
 
   return (
-    <CartProvider>
-      <Header/>
-        <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/order' element={<Order />}/>
-        </Routes>
-    </CartProvider>
+    <HistoryProvider>
+      <CartProvider>
+        <Header/>
+          <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/order' element={<Order />}/>
+          </Routes>
+      </CartProvider>
+    </HistoryProvider>
   )
 }
 

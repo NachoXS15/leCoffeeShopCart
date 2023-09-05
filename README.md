@@ -1,14 +1,14 @@
 # Restaurant Shopping-Cart
-<Hr />
+
 Project build using React with TypeScript, Boostrap and SCSS.
 
 ## Goal:
 
-This project was made for the local Fast Food Restaurant "LeCoffee", in order to create orders, keep track of this, and export them in PDF Format.
+This project was made for the local Fast Food Restaurant "LeCoffee", in order to create orders, keep track of these, and export them in PDF Format.
 
 ### What can you do?
 
-<hr />
+
 <b>Version 1.0: </b>
 
 <ul>
