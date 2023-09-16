@@ -18,42 +18,39 @@ export default function Cart(
     const { cartItems, cartQuantity, cartOpen, cartClose } = useCartContext();
 
     return (
-      <>
-        <Document>
-            <Page size={"A4"}>
-                <Offcanvas show={isOpen} onHide={cartClose} placement="end">
-                    <Offcanvas.Header closeButton>
-                        <Offcanvas.Title>Carrito</Offcanvas.Title>
-                    </Offcanvas.Header>
-                    <Offcanvas.Body>
-                        {cartQuantity === 0 ? (
-                            <h5 style={{ textAlign: "center" }}>
-                                No hay elementos agregados!
-                            </h5>
-                        ) : (
-                            cartItems.map((item) => {
-                                return <CartItem {...item} key={item.id} />;
-                            })
-                        )}
-                        <h5>
-                            Total:{" "}
-                            {currencyFormat(
-                                cartItems.reduce((total, cartItem) => {
-                                    const item = products.find(
-                                        (item) => item.id === cartItem.id
-                                    );
-                                    return (
-                                        total +
-                                        (item?.price || 0) * cartItem.quantity
-                                    );
-                                }, 0)
-                            )}
-                        </h5>
-                    </Offcanvas.Body>
-                    
-                </Offcanvas>
-            </Page>
-        </Document>
-      </>
+        <Offcanvas show={isOpen} onHide={cartClose} placement="end">
+            <Offcanvas.Header closeButton>
+                <Offcanvas.Title>Carrito</Offcanvas.Title>
+            </Offcanvas.Header>
+            <Offcanvas.Body>
+                {cartQuantity === 0 ? (
+                    <h5 style={{ textAlign: "center" }}>
+                        No hay elementos agregados!
+                    </h5>
+                ) : (
+                    cartItems.map((item) => {
+                        return (
+                            <>
+                                <CartItem {...item} key={item.id} />
+                            </>
+                        );
+                    })
+                )}
+                <h5>
+                    Total:{" "}
+                    {currencyFormat(
+                        cartItems.reduce((total, cartItem) => {
+                            const item = products.find(
+                                (item) => item.id === cartItem.id
+                            );
+                            return (
+                                total + (item?.price || 0) * cartItem.quantity
+                            );
+                        }, 0)
+                    )}
+                </h5>
+                {cartQuantity > 0 ? <button className="btn btn-success btn-sm">Cargar Producto</button> : null}
+            </Offcanvas.Body>
+        </Offcanvas>
     );
 }

@@ -5,13 +5,12 @@ import History from '../components/History';
 const HistoryContext = createContext({} as HistoryContext);
 
 type HistoryProviderProps = {
-    children: ReactNode
+    children: ReactNode;
 }
 
-// type HistoryItem = {
-//   id: number,
-//   quantity: number
-// }
+type HistoryItem = {
+  id: number;
+}
 
 type HistoryContext = {
     historyOpen: () => void
@@ -19,9 +18,9 @@ type HistoryContext = {
     //historyItems: () => void;
     //historyItem: HistoryItem[];
     //historyQuantity: number;
-    getItems: () => void
-    addItems: () => void;
-    removeItems: () => void;
+    getItems: (id: number) => void
+    addItems: (id: number) => void;
+    removeItems: (id: number) => void;
 
 }
 
@@ -31,20 +30,20 @@ export default function useHistoryContext() {
 
 export function HistoryProvider({ children }: HistoryProviderProps){
   const [isOpen, setIsOpen] = useState(false)
-  //const {cartItems} = useCartContext();
-  //const [historyItems, setHistoryItems] = useState<HistoryItem[]>([]);
+  const {cartItems} = useCartContext();
+  const [historyItems, setHistoryItems] = useState<HistoryItem[]>([]);
 
   const historyOpen = () => setIsOpen(true)
   const historyClose = () => setIsOpen(false)
 
   //add items from cart to history menu
 
-  const getItems = () =>{
-      // return historyItems.find((item) => item.id === id)?.quantity || 0;
+  const getItems = (id: number) =>{
+      return historyItems.find((item) => item.id === id);
   }
 
   const addItems = () => {
-
+    
   }
 
   const removeItems = () => {

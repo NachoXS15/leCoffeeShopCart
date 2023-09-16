@@ -22,13 +22,13 @@ export default function Item({ id, name, price, imgUrl }: ProductProps) {
                 </div>
                 <div>
                     {quantity === 0 ? (
-                        <button id="cart" onClick={() => increaseItems(id)}>Cart</button>
+                        <button /*id="cart"*/ className="btn btn-outline-dark" style={{float: 'right', marginRight: '1em'}}  onClick={() => increaseItems(id)}>Añadir a carrito</button>
                     ) : (
                         <div className="buttons">
-                            <button className="control-buttons" onClick={() => increaseItems(id)}>+</button>
+                            <button className="btn btn-outline-dark" style={{padding: '0.2em', margin: '0.2em'}} onClick={() => decreaseItems(id)}>-</button>
                             <span>{quantity}</span>
-                            <button className="control-buttons" onClick={() => decreaseItems(id)}>-</button>
-                            <button className="red-button" onClick={() => removeItems(id)}>Remover</button>
+                            <button className="btn btn-outline-dark" style={{padding: '0.2em', margin: '0.2em'}} onClick={() => increaseItems(id)}>+</button>
+                            <button className="btn btn-outline-dark" style={{float: 'right', marginRight: '1em'}} onClick={() => removeItems(id)}>Remover</button>
                         </div>
                     )}
                 </div>
