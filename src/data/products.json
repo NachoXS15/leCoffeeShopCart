@@ -3,36 +3,48 @@
         "id": 1,
         "name": "TRIPLE CHEESE",
         "price": 2000,
+        "category": "Burger",
+        "desc": "god",
         "imgUrl": "img/burger.png"
     },
     {
         "id": 2,
         "name": "DOBLE BACON",
         "price": 1500,
+        "category": "Burger",
+        "desc": "god2",
         "imgUrl": "img/doble-bacon.png"
     },
     {
         "id": 3,
         "name": "LECO BURGER",
         "price": 1500,
+        "category": "Burger",
+        "desc": "god3",
         "imgUrl": "img/leco-burger.png"
     },
     {
         "id": 4,
         "name": "PEPSI LATA 350ML",
         "price": 350,
+        "category": "Drink",
+        "desc": "god4",
         "imgUrl": "img/pepsi.png"
     },
     {
         "id": 5,
         "name": "ANDES RUBIA 473ml",
         "price": 600,
+        "category": "Drink",
+        "desc": "god5",
         "imgUrl": "img/andes.png"
     },
     {
         "id": 6,
         "name": "AGUA NESTLE 500ML ",
         "price": 400,
+        "category": "Drink",
+        "desc": "god6",
         "imgUrl": "img/agua.png"
     }
 ]
