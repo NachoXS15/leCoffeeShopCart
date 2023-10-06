@@ -15,7 +15,7 @@ export default function Cart(
     { isOpen }: ShoppingCarProps,
     { id }: ProductProps
 ) {
-    const { cartItems, cartQuantity, cartOpen, cartClose } = useCartContext();
+    const { cartItems, cartQuantity, cartOpen, cartClose, removeAllItems } = useCartContext();
 
     return (
         <Offcanvas show={isOpen} onHide={cartClose} placement="end">
@@ -49,7 +49,12 @@ export default function Cart(
                         }, 0)
                     )}
                 </h5>
-                {cartQuantity > 0 ? <button className="btn btn-success btn-sm">Cargar Producto</button> : null}
+                {cartQuantity > 0 ? 
+                    <div>
+                        <button style={{margin: '2px'}} className="btn btn-success btn-sm">Cargar producto</button>
+                        <button onClick={removeAllItems} className="btn btn-outline-danger btn-sm">Borrar todo</button>
+                    </div>
+                : null}
             </Offcanvas.Body>
         </Offcanvas>
     );

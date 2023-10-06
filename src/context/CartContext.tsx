@@ -20,6 +20,7 @@ type CartContext = {
     increaseItems: (id: number) => void;
     decreaseItems: (id: number) => void;
     removeItems: (id: number) => void;
+    removeAllItems: () => void
 };
 
 export default function useCartContext() {
@@ -87,9 +88,17 @@ export function CartProvider({ children }: CartProviderProps) {
         });
     };
 
+    const removeAllItems = () => {
+        setCartItems((currItem) => {
+            return currItem.splice(0, 0)
+        })
+    }
+
+   
+
     return (
         <CartContext.Provider
-            value={{ getItems, increaseItems, decreaseItems, removeItems, cartItems, cartQuantity, cartOpen, cartClose }}
+            value={{ getItems, increaseItems, decreaseItems, removeItems, cartItems, cartQuantity, cartOpen, cartClose, removeAllItems }}
         >
             {children}
             <Cart isOpen={isOpen}/>
